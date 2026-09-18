@@ -1,6 +1,7 @@
 package caja;
 
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class PruebaCaja {
     public static void main(String[] args) {
@@ -14,13 +15,15 @@ public class PruebaCaja {
         int opcion;
         // Ciclo para el menu
         do{
-            System.out.println("Elija el modo de ejecucion del programa");
-            System.out.println("1 - Con constructor vacio\n2 - Con constructor con argumentos\n3 - Cerrar");
-            System.out.println("Seleccione una opcion (1-2-3): ");
+            System.out.println("\nElija el modo de ejecucion del programa");
+            System.out.println("1 - Consola con Scanenr\n2 - Ventanas con JOptionPane\n3 - Cerrar");
+            System.out.println("Seleccione una opcion: ");
             opcion = entrada.nextInt();
             switch (opcion){
             case 1:
+                // Clase Scanner
                 // Constructor vacio
+                System.out.println("Constructor 1:");
                 Caja caja1 = new Caja();
                 // Valores ingresados por el usuario
                 System.out.println("Digite el alto de la caja: ");
@@ -32,18 +35,16 @@ public class PruebaCaja {
                 System.out.println("Volumen de la caja: " + caja1.calcularVolumenCaja());
                 break;
             case 2:
+                // Clase JOptionPane
                 // Constructor con argumentos
                 double alto, ancho, profundidad;
                 // Esto es para que el usuario ingrese los valores dentro de estas variables, 
                 //y pasar los argumentos al constructor
-                System.out.println("Digite el alto de la caja: ");
-                alto = entrada.nextDouble();
-                System.out.println("Digite el ancho de la caja: ");
-                ancho = entrada.nextDouble();
-                System.out.println("Digite la profundidad de la caja: ");
-                profundidad = entrada.nextDouble();
+                alto = Double.parseDouble(JOptionPane.showInputDialog("Digite el alto de la caja: "));
+                ancho = Double.parseDouble(JOptionPane.showInputDialog("Digite el ancho de la caja: "));
+                profundidad = Double.parseDouble(JOptionPane.showInputDialog("Digite la profundidad de la caja: "));
                 Caja caja2 = new Caja(alto, ancho, profundidad);
-                System.out.println("Volumen de la caja: " + caja2.calcularVolumenCaja());
+                JOptionPane.showMessageDialog(null,"Volumen de la caja: " + caja2.calcularVolumenCaja());
                 break;
             case 3:
                 System.out.println("Cerrando programa...");
