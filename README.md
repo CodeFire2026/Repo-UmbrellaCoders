@@ -59,6 +59,50 @@ Si queremos conectar el repositorio de GitHub con nuestro repositorio local, aco
     git push origin main
 ```
 
+## Clase 2
+
+### Clave SSH
+
+Cargar llave SSH publica en GitHub
+
+> **NOTA:** Si ya has realizado este proceso en tu equipo, no se debe repetir el SSH
+
+Para copiar la llave publica:
+
+1. Ir al archivo .ssh, alli encontraras el archivo .pub
+2. Abrir archivo .pub, se puede abrir con el txt
+3. Copiar el contenido que esta dentro.
+
+En Github:
+
+1. En Github ir a Settings > SSH and GPG Keys
+2. Click en New SSH Key
+3. Colocar el nombre y pegar la ssh publica
+
+**Se aconseja que la ssh tenga el nombre del ordenador en el que estas trabajando. Esto se debe hacer con cada pc nueva o dispositivo nuevo que tengamos para acceder a nuestra cuenta de GitHub.**
+
+### Comandos de Git
+
+```sh
+    git branch # Vemos en que rama estamos
+    git checkout master # Ponernos en la rama master
+    git branch -M main # Cambiamos el nombre a la rama master
+    git remote add origin git@github.com:nombreUsuario/class-git.git # Agregamos el repositorio remoto, este es un ejemplo
+    git remote -v # Vemos si ya esta conectado
+    git merge segunda # Mergeamos lo que tenemos en la rama segunda en main
+    git commit -am "Uso de GitHub parte 20" # Hacemos el commit de hoy
+    git push origin main # Pasamos todo lo hecho a GitHub, revisar en el repositorio en GitHub.
+```
+
+Frente al cambio de nombre de rama master a main, suele suceder que en el repo de GitHub se hayan creado dos ramas, la rama master y la rama main.
+
+Para solucionar esto:
+
+1. Ir al repositorio en Github
+2. Ir a settings > Branches
+3. Cambiar la rama principal de master a main
+4. Una vez hecho el cambio ya podemos borrar la rama master
+
 ## Clase 6
 
 Error con tags
