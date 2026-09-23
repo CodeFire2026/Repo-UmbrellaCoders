@@ -103,6 +103,92 @@ Para solucionar esto:
 3. Cambiar la rama principal de master a main
 4. Una vez hecho el cambio ya podemos borrar la rama master
 
+## Clase 3
+
+### Cambios en GitHub: de master a main
+
+El escritor argentino Julio Cortázar afirma que las palabras tienen color y peso. Por otro lado, los sinónimos existen por definición, pero no expresan lo mismo. Feo no es lo mismo que desagradable, ni aromático es lo mismo que oloroso.
+
+Por lo anterior, podemos afirmar que los sinónimos no expresan lo mismo, no tienen el mismo “color” ni el mismo “peso”.
+
+Sí, esta lectura es parte de la enseñanza profesional de Git & GitHub.
+
+Desde el 1 de octubre de 2020 GitHub cambió el nombre de la rama principal: ya no es “master” -como aprenderás aquí- sino main.
+
+Este derivado de una profunda reflexión ocasionada por el movimiento #BlackLivesMatter.
+
+La industria de la tecnología lleva muchos años usando términos como master, slave, blacklist o whitelist y esperamos pronto puedan ir desapareciendo.
+
+Y sí, las palabras importan.
+
+Por lo que de aquí en adelante cada vez que me escuches mencionar “master” debes saber que hago referencia a “main”.
+
+¿Cuando es que sigue siendo master y cuando sigue siendo main?
+
+* Cuando se crea un repositorio desde git bash en nuestro ordenador a través de git init, sigue siendo el estandar como master.
+* Cuando se crea un repositorio desde github la rama que se crea por default es main
+
+¿Qué hacer con esto? 
+
+Debes cambiar el nombre de la rama master a main con el comando:
+
+```bash
+git branch -M main
+```
+
+O cambiando la asignación por default con este otro comando:
+
+```bash
+git config --global init.defaultBranch main
+```
+
+A partir de este comando siempre que ingreses git init será la rama main.
+
+Si clonamos un repositorio que fue creado desde github no serán necesarios estos cambios ya que prevalece la rama main.
+
+Otro comando que deben saber es:
+
+```bash
+gitk
+```
+
+Si no te funciona el comando gitk es posible no lo tengas instalado por defecto.
+
+Para instalar gitk debemos ejecutar los siguientes comandos:
+
+```bash
+sudo apt-get update
+sudo apt-get install gitk
+```
+
+Podemos ver gráficamente nuestro entorno y flujo de trabajo local con Git utilizando el comando **gitk**. Gitk fue el primer visor gráfico que se desarrolló para ver de manera gráfica el historial de un repositorio de Git.
+
+### Git
+
+> Actualizar repositorio local
+
+Cuando trabajamos en equipo, o bien trabajamos individualmente con diferentes computadoras, debemos traer los cambios realizados en el repositorio remoto al local para mantener nuestro entorno al día y evitar conflictos.
+
+Flujo de trabajo:
+
+```bash
+cd repositorio # Ingresamos al repositorio
+git checkout main # Cambiamos a la rama principal (main)
+git pull origin main # Traemos los cambios que se hicieron
+git checkout second # Actualizamos las demas ramas
+git pull origin second
+git checkout trabajo
+git pull origin trabajo
+
+# O hacer merge
+git checkout main
+git merge origin/main
+git checkout second
+git merge origin/second
+git checkout trabajo
+git merge origin/trabajo
+```
+
 ## Clase 6
 
 Error con tags
