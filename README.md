@@ -189,6 +189,156 @@ git checkout trabajo
 git merge origin/trabajo
 ```
 
+## Clase 4
+
+### Tu primer Push
+
+La creación de las SSH es necesario solo una vez por cada computadora. Aquí conocerás cómo conectar a GitHub usando SSH.
+
+Luego de crear nuestras llaves SSH podemos entregarle la llave pública a GitHub para comunicarnos de forma segura y sin necesidad de escribir nuestro usuario y contraseña todo el tiempo.
+
+Para esto debes entrar a la Configuración de Llaves SSH en GitHub, crear una nueva llave con el nombre que le quieras dar y el contenido de la llave pública de tu computadora.
+
+Ahora podemos actualizar la URL que guardamos en nuestro repositorio remoto, solo que, en vez de guardar la URL con HTTPS, vamos a usar la URL con SSH:
+
+```sh
+git remote set-url origin url-ssh-del-repositorio-en-github
+```
+
+Comandos para copiar la llave SSH:
+
+Estas son las rutas del ssh publico
+
+* Mac:
+
+```bash
+pbcopy < ~/.ssh/id_rsa.pub
+```
+
+* Windows (Git Bash):
+
+```bash
+clip < ~/.ssh/id_rsa.pub
+```
+
+* Linux (Ubuntu):
+
+```bash
+cat ~/.ssh/id_rsa.pub
+```
+
+**Importante**
+
+Las buenas costumbres nos enseñan que antes de hacer un push, siempre debemos hacer un pull, un fetch, esto para que si alguien ya hizo algún cambio, no se genere un conflicto.
+
+### Invitar a un colaborador
+
+Estos son los pasos para invitar a un colaborador en un repositorio en Github:
+
+1. Ir al repositorio en Github.
+2. Settings -> colaborators (nos pedira ingresar contraseña o un 2FA de verificación).
+3. Enviar la invitación escribiendo el nombre de usuario.
+
+Del otro lado el usuario invitado solo debe aceptar y listo, ya puede participar del proyecto haciendo commit.
+
+## Clase 5
+
+### Git tag y versiones en GitHub
+
+En Git, las etiquetas o tags tienen un papel importante al asignar versiones a los commits más significativos de un proyecto.
+
+Aprender a utilizar el comando git tag, entender los diferentes tipos de etiquetas, cómo crearlas, eliminarlas y compartirlas, es esencial para un flujo de trabajo eficiente.
+
+#### Creación de etiquetas en Git
+
+Sustituye con un identificador semántico que refleje el estado del repositorio en el momento de la creación. Git admite etiquetas anotadas y ligeras:
+
+* **Etiquetas anotadas:** Almacenan información adicional como la fecha, etiquetador y correo electrónico; son ideales para publicaciones públicas.
+
+```bash
+  git tag -a v-01-00 -m "Mensaje del tag"
+```
+
+* **Etiquetas ligeras:** Son más simples y funcionan como marcadores apuntando a un commit específico.
+
+Si queremos crear el tag al commit en el que estamos ubicados:
+
+```bash
+  git tag v1.0
+```
+
+Si queremos crear el tag sobre un commit específico:
+
+Ejecutamos:
+
+```bash
+  git log --oneline
+```
+
+Nos aparecera algo asi:
+
+```bash
+9261c41 Agrego clase 3 de github al readme.md
+ee923fa Agrego clase 2 de github al readme.md
+c362443 Termino clase 1 de github
+```
+
+Elegimos el commit y copiamos su identificador
+
+```bash
+  git tag v1.0 ee923fa
+```
+
+#### Listado de etiquetas
+
+Para obtener una lista de etiquetas existentes en el repositorio, ejecutamos:
+
+```bash
+git tag
+```
+
+Esto mostrará una lista de las etiquetas existentes, como:
+
+```sh
+v1.0
+v1.1
+v1.2
+```
+
+Para perfeccionar la lista, puedes utilizar opciones adicionales, como -l con una expresión comodín.
+
+```bash
+git tag -l "v1.*"
+```
+
+### Uso compartido de etiquetas
+
+Compartir etiquetas requiere un enfoque explícito al usar el comando git push. Por defecto, las etiquetas no se envían automáticamente. Para enviar etiquetas específicas, utiliza:
+
+**Subir una etiqueta especifica:**
+
+```bash
+git push origin nombreTag
+```
+
+**Subir todas las etiquetas que tengamos:**
+
+```bash
+git push origin --tags
+```
+
+### Eliminación de etiquetas
+
+Para eliminar una etiqueta, usa el siguiente comando:
+
+```bash
+git tag -d <nombreTag>
+```
+
+Esto eliminará la etiqueta identificada por "nombreTag" en el repositorio local.
+
+En resumen, las etiquetas en Git son esenciales para asignar versiones y capturar instantáneas importantes en el historial de un proyecto. Aprender a crear, listar, compartir y eliminar etiquetas mejorará tu flujo de trabajo con Git.
+
 ## Clase 6
 
 Error con tags
