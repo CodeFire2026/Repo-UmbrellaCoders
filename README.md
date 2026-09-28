@@ -341,12 +341,58 @@ En resumen, las etiquetas en Git son esenciales para asignar versiones y captura
 
 ## Clase 6
 
-Error con tags
+### Error con tags
 
-Que pasa si por error cargamos un tag con el mismo nombre dos veces?
+> ¿Que pasa si por error cargamos un tag con el mismo nombre dos veces?
 
 Si intentamos crear dos tags con el mismo nombre en Git, se produce un error, pues los tags deben tener nombres unicos dentro del repositorio. Git no permite crear un segundo tag con el mismo nombre.
 
-Como solucionamos este problema?
+Si intentamos subir un tag que ya existe en GitHub con git push, el servidor remoto también rechazará el envío para proteger la integridad de las versiones.
 
-Para solucionarlo, podemos eliminar el tag incorrecto y volver a crearlo apuntando al commit correcto, o utilizar un nombre diferente para el nuevo tag.
+> ¿Como solucionamos este problema?
+
+Para solucionarlo, podemos eliminar el tag incorrecto y volver a crearlo apuntando al commit correcto:
+
+1. Verificamos todos los tags existentes:
+
+```bash
+git tag
+```
+
+2. Vemos a qué commit apunta el tag:
+
+```bash
+git show v1.0 # O la version que sea
+```
+
+3. Si el tag apunta al commit incorrecto, lo eliminamos localmente:
+
+```bash
+git tag -d v1.0
+```
+
+4. Eliminamos el tag del repositorio remoto:
+
+```bash
+git push origin --delete v1.0
+```
+
+5. Vemos los commits para copiar el identificador del commit correcto
+
+```bash
+git log --oneline
+```
+
+6. Ahora creamos el tag apuntando al commit correcto:
+
+```bash
+git tag v1.0 e23fa90
+```
+
+7. Lo subimos a github:
+
+```bash
+git push origin v1.0
+```
+
+Asi el tag v1.0 queda apuntando al commit correcto
