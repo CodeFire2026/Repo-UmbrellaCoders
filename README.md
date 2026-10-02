@@ -396,3 +396,47 @@ git push origin v1.0
 ```
 
 Asi el tag v1.0 queda apuntando al commit correcto
+
+## Clase 8
+
+### Repaso: ¿Qué es Git?
+
+Git es un sistema de control de versiones que permite registrar y administrar los cambios realizados en los archivos de un proyecto.
+
+Nos permite guardar diferentes versiones de nuestro proyecto mediante commits, consultar el historial de cambios y trabajar con diferentes ramas sin afectar directamente la version principal.
+
+Git tambien permite conectar nuestro repositorio local con un repositorio remoto, como GitHub, para trabajar en equipo, almacenar y compartir nuestro codigo.
+
+### Manejo de ramas en GitHub
+
+Las ramas nos permiten hacer cambios a nuestros archivos sin modificar la versión principal (main).
+
+Podemos trabajar con ramas que nunca enviamos a GitHub, así como tambien pueden haber ramas importantes en GitHub que nunca usamos o tengamos en el repositorio local. Lo crucial es que aprendas a manejarlas para trabajar profesionalmente.
+
+Si, estando en otra rama, modificamos los archivos y hacemos commit, tanto el historial (git log) como los archivos serán afectados.
+
+La ventaja que tiene usar ramas es que las modificaciones solo afectarán a esa rama en particular.
+
+Si luego de “guardar” los archivosn (usando commit) nos movemos a otra rama ```git checkout otraRama``` veremos como las modificaciones de la rama pasada no aparecen en la otraRama.
+
+> **Comandos para manejo de ramas en GitHub**
+
+```sh
+  git branch branchName # Crear una rama
+  git checkout -b branchName # Otro comando para crea una rama
+  git checkout branchName # Movernos a una rama 
+  git push origin branchName # Publicar una rama local al repositorio remoto
+```
+
+### Gitk
+
+El comando ```gitk``` sirve para poder ver graficamente nuestro entorno y flujo de trabajo local con Git. Asi rambien podemos entender mejor todo el funcionamiento de ramas, merge y todo el flujo de un formato ordenado.
+
+Gitk fue el primer visor grafico que se desarrollo para ver de manera grafica el historial de un repositorio en Git.
+
+Si no funciona el comando ```gitk``` es posible no lo tengamos instalado por defecto. Para esto debemos ejecutar los siguientes comandos:
+
+```sh
+  sudo apt-get update
+  sudo apt-get install gitk
+```
