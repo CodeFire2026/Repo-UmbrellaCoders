@@ -1,0 +1,20 @@
+.container-inicio {
+    background: rgba(10, 25, 47, 0.55); /*Fondo oscuro semi-transparente */
+    backdrop-filter: blur(10px); /*Efecto de desenfoque estilo cristal */
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(0, 210, 255, 0.2); /*Borde*/
+    border-radius: 20px; /*Borde no tan recto*/
+    padding: 2.5rem; /*Espacio interno*/
+    
+    margin: 0 3rem;
+    max-width: 40rem; /*Evita que la tarjeta se estire demasiado en pantallas grandes*/
+    line-height: 2rem; /*Espacio entre renglones*/
+    font-size: 1.25rem; /*Tamaño de las letras*/
+}
+.hola-mundo {
+    color: #5aa1e4;
+}
+.nombre-grupo {
+    color: var(--azul-claro);
+}

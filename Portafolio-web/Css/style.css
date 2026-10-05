@@ -1,0 +1,82 @@
+:root {
+    --fondo-color: #0B1E2D; /* Azul para fondo*/
+    --azul-oscuro: #1a5b8cfd;/*Azul oscuro (bordes)*/
+    --azul-oscuro2: #09273ffa; /*Azul oscuro (tarjetas)*/
+    --azul-claro: #3A9BDC;/*Azul claro*/
+    --color-texto: #F4F7F9;/*Color de texto principal */
+}
+
+/*Fondo*/
+body {
+    /*Imagen de fondo*/
+    background-image: url(../Assets/imagen2.png); /*Logo del grupo de fondo*/
+    background-size: 45rem; /*Tamaño del logo*/
+    background-repeat: no-repeat; /*Esto es para que no se repita la imagen y no quede en mosaico*/
+    background-position:105%;/*Centrar la imagen*/
+
+    /*Colores y letras de fondo*/
+    background-color: var(--fondo-color); /*Color de fondo*/
+    color: var(--color-texto);/*Color de texto general*/
+    font-family: 'Montserrat', sans-serif;/*Tipo de letra general*/
+}
+
+/* Encabezado */
+.encabezado {
+    display: flex;/*Aplico flex al encabezado*/
+    justify-content: space-between;/*Distribucion de el contenido*/
+    align-items: center;/*Centrar items */
+    margin: 0 1rem;/*Margen*/
+    border-bottom: 1px solid var(--azul-claro);/*Linea para liminar el encabezado*/
+}
+h1 {
+    font-family: monospace; /*Tipo de letra para el nombre h1*/
+}
+.diseño-h1 {
+    color: var(--azul-claro); /*Diseño para el h1*/
+}
+.navigation {
+    display: flex; /*Flex para la navegacion*/
+    gap: 5rem; /*Distancia entre las etiquetas*/
+    list-style: none;/*Quitar el estilo predeterminado de las etiquetas */
+}
+.contactar {
+    list-style: none;
+    padding: 9px 12px; /*Espacio interno para el boton*/
+    border-radius: 1rem; /*Borde redondeado*/
+    font-weight:600; /*Ancho de las letras para que no se pierdan en el fondo*/
+    color: var(--fondo-color);
+    background-color: #5aa1e4; /*Color de fondo para el boton*/
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-texto);
+}
+
+.inicio {
+    display: flex;
+    align-items: center; /*Centra la tarjeta en la seccion*/
+    min-height: 80vh; /*Altura de la seccion en la pantalla*/
+}
+/**/
+@media (max-width: 768px) {
+    .encabezado {
+        flex-wrap: wrap; /*Acomoda los elementos en una linea, saltea linea si es necesario*/
+        justify-content: center; /*Centra el contenido*/
+        gap: 1rem; /*Espacio entre los items*/
+        padding: 1rem 0; /*Espacio interno*/
+    }
+    .navigation {
+        gap: 1.5rem; /*Espacio entre etiquetas*/
+        padding: 0; /*Espacio interno para acomodar*/
+        margin: 0;
+    }
+    body {
+        background-size: 40rem; /*Tamaño de la imagen de fondo*/
+        background-position: center; /*Centra la imagen de fondo*/
+    }
+    .inicio .container-inicio {
+        padding: 1rem; /*Espacio interno para la tarjeta*/
+        font-size: 1rem; /*Tamaño del contenido*/
+    }
+}
