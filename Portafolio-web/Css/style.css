@@ -6,20 +6,29 @@
     --color-texto: #F4F7F9;/*Color de texto principal */
 }
 
+/*Imagen*/
+/*background-position:105%; Centrar la imagen*/
+/*background-size: 40rem; Tamaño del logo*/
+/**/
 /*Fondo*/
 body {
-    /*Imagen de fondo*/
-    background-image: url(../Assets/imagen2.png); /*Logo del grupo de fondo*/
-    background-size: 45rem; /*Tamaño del logo*/
-    background-repeat: no-repeat; /*Esto es para que no se repita la imagen y no quede en mosaico*/
-    background-position:105%;/*Centrar la imagen*/
 
-    /*Colores y letras de fondo*/
-    background-color: var(--fondo-color); /*Color de fondo*/
+    /*Color y letras de fondo*/
+    background-color: #021426; /*Color de fondo*/
     color: var(--color-texto);/*Color de texto general*/
     font-family: 'Montserrat', sans-serif;/*Tipo de letra general*/
-}
 
+    /*Diseño para el fondo*/
+    background-image:
+    radial-gradient(circle at 82% 55%, rgba(0, 174, 255, 0.2), transparent 30%), /*Brillo en el logo con forma de circulo*/
+    linear-gradient(135deg, transparent 70%, rgba(0, 140, 255, 0.15) 70.2%, rgba(0, 140, 255, 0.15) 70.5%, transparent 70.5%), /*Línea diagonal */
+    linear-gradient(315deg, transparent 80%, rgba(0, 140, 255, 0.1) 80%, rgba(0, 140, 255, 0.1) 80.5%, transparent 80.5%), /*Otra línea diagonal en la esquina contraria*/
+    linear-gradient(135deg, #000000, #021426, #000000); /*Degradado de fondo*/
+
+    background-repeat: no-repeat; /*Esto es para que no se repita el diseño del fondo*/
+    min-height: 100vh; /*Para que ocupe toda la pantalla*/
+}
+/**/
 /* Encabezado */
 .encabezado {
     display: flex;/*Aplico flex al encabezado*/
@@ -28,11 +37,12 @@ body {
     margin: 0 1rem;/*Margen*/
     border-bottom: 1px solid var(--azul-claro);/*Linea para liminar el encabezado*/
 }
-h1 {
-    font-family: monospace; /*Tipo de letra para el nombre h1*/
+.encabezado p {
+    font-family: monospace; /*Tipo de letra para el nombre del encabezado*/
+    font-size: 1.25rem; /*Tamaño de letra*/
 }
-.diseño-h1 {
-    color: var(--azul-claro); /*Diseño para el h1*/
+.diseño-p {
+    color: var(--azul-claro); /*Diseño para el nombre del encabezado*/
 }
 .navigation {
     display: flex; /*Flex para la navegacion*/
@@ -55,9 +65,21 @@ a {
 
 .inicio {
     display: flex;
-    align-items: center; /*Centra la tarjeta en la seccion*/
+    align-items: center; /*Centrar*/
     min-height: 80vh; /*Altura de la seccion en la pantalla*/
 }
+h1 {
+    font-size: 5.25rem; /*Tamaño de la letra*/
+    line-height: 4.75rem; /*Espacio entre renglones*/
+}
+.diseño-h1 {
+    color: var(--azul-claro); /*Color de la letra*/
+}
+.logo {
+    width: 32rem; /*Anchura de la imagen*/
+    height: 25rem; /*Altura de la imagen*/
+}
+
 /**/
 @media (max-width: 768px) {
     .encabezado {
