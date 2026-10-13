@@ -440,3 +440,137 @@ Si no funciona el comando ```gitk``` es posible no lo tengamos instalado por def
   sudo apt-get update
   sudo apt-get install gitk
 ```
+
+## Clase 9
+
+### Configurar múltiples colaboradores en un repositorio de GitHub
+
+Por defecto, cualquier persona puede clonar o descargar tu proyecto desde GitHub, pero no pueden crear commits, ni ramas. Esto quiere decir que pueden copiar tu proyecto pero no colaborar con él, si este es publico, de otra manera, osea, si es privado es necesario que realmente estes haciendo una invitación, sino no lo van a poder ver. Existen varias formas de solucionar esto para poder aceptar contribuciones. Una de ellas es añadir a cada persona de nuestro equipo como colaborador de nuestro repositorio.
+
+> ¿Cómo agregar colaboradores en Github?
+
+1. En Github, ir a nuestro repositorio.
+2. Settings -> Collaborators
+3. Seleccionar la opción para agregar colaboradores.
+4. Ingresar el nombre de usuario o email de las personas que queremos invitar.
+5. Enviar la invitación y esperar a que la acepten.
+
+### Corregir mensaje de un commit
+
+Si como colaborador agregaste erróneamente el mensaje del commit, lo puedes cambiar de la siguiente manera:
+
+```bash
+git commit --amend # Corregir el mensaje
+git pull origin main # Traer el repositorio remoto
+git push --set-upstream origin main # Ejecutar el cambio, el error arreglado
+```
+
+### Comienzo del colaborador
+
+1. Preparar el entorno de trabajo
+
+```bash
+cd Documentos
+mkdir class-git
+cd class-git
+ls -al
+```
+
+2. Clonar el repositorio de Github
+
+  1. Ingresar al repo en GitHub
+  2. Copiar la URL
+  3. Ejecutar el siguiente comando:
+
+```bash
+  git clone url-copiada-github
+```
+
+Esto descarga el repositorio y su historial al equipo local.
+
+No pide ni usuario ni contraseña si el repositorio es publico. En uno privado, el usuario debe tener acceso y autenticarse cuando corresponda.
+
+3. Realizar modificaciones
+
+```bash
+code . #Abre VSC para realizar los cambios
+```
+
+También podemos crear o modificar un archivo desde la terminal:
+
+```bash
+vim historia.txt
+```
+
+**Control de Vim (Git Bash en Windows o Ubuntu)**
+
+- Esc para salir del modo de edicion.
+- Escribir :wq!
+- Presionar enter.
+
+**Utilizando Nano**
+
+- Presionar Ctrl + x
+- Presionar s
+- Presionar enter
+
+4. Revisar y registrar los cambios, hacer el primer commit
+
+```bash
+git status
+git commit -am "Mi primer commit"
+git pull origin main
+git fetch
+git branch
+git log
+git log --graph
+git push origin main
+```
+
+- git status: muestra el estado de los archivos.
+- git commit -am: crea un commit con los cambios de archivos que Git ya está siguiendo.
+- git pull origin main: trae e integra los cambios de la rama remota main.
+- git fetch: descarga información del repositorio remoto sin integrar los cambios.
+- git branch: muestra las ramas locales. Para ver también las ramas remotas, utilizamos git branch -a.
+- git log: muestra el historial de commits.
+- git log --graph: muestra gráficamente las relaciones entre los commits.
+- git push origin main: intenta subir los cambios a la rama remota main, Va a pedir un email que será el del colaborador, su contraseña.
+
+5. Error de permisos al subir los cambios
+
+Si GitHub devuelve un error de permisos al ejecutar git push origin main, puede deberse a que el propietario del repositorio todavía no autorizó al colaborador.
+
+6. Agregar al colaborador en GitHub
+
+Repositorio > Settings > Collaborators
+
+Alli agregamos el correo o nombre de usuario: el colaborador debe tener un email publico y visible o de otra manera debera ser con el nombre de usuario publico: ingresar el username y debe ir como colaborador.
+
+Se puede enviar un email con la url, pero ya GitHub envia una notificación al usuario de invitado, es una cosa que debemos empezar a consultar y revisar.
+
+7. Volver a subir los cambios
+
+El colaborador debe aceptar la invitación, una vez hecho eso ya tendrá total acceso para hacer push al repositorio.
+
+```bash
+git pull origin main
+git push origin main #Colocar nombre de usuario y contraseña, listo
+```
+
+8. Verificar los cambios desde el repositorio del propietario
+
+Si el dueño del repositorio no ve los cambios, debe actualizar y revisar el historial:
+
+```bash
+git pull origin main
+git fetch
+git log --stat
+```
+
+- git pull origin main: integra los cambios remotos en la rama local actual.
+- git fetch: actualiza la información del repositorio remoto.
+- git log --stat: muestra el historial de commits y los archivos modificados.
+
+9. Distribuir el trabajo mediante ramas
+
+A partir de ahora el dueño del repositorio y el colaborador deberán repartir el trabajo, esto se hace con distintas ramas de trabajo: el dueño trabajará desde la rama header y el colaborador desde la rama footer, al final cuando se termine, se hara un merge para terminar el proyecto.
