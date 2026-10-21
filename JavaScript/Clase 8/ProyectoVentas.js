@@ -51,7 +51,7 @@ class Orden {
             this._contadorProductosAgregados++;
         }
         else {
-            console.log("Ha llegado al limite de productos.")
+            console.log("Orden "+this._idOrden+" Ha llegado al limite de productos.")
         }
     }
     calcularTotal(){
@@ -62,13 +62,20 @@ class Orden {
         return total;
     }
     mostrarOrden(){
-        let producto_orden = "";
+        
+        if (this._productos.length === 0) {
+            return `N° de orden: ${this._idOrden}
+        No se ha agregado ningun producto`;
+        }
+        else {
+            let producto_orden = "";
         this._productos.forEach(function(producto){
-        producto_orden += '\n    ' + producto.toString();
+        producto_orden += '\n     -' + producto.toString();
         })
         return `N° de orden: ${this._idOrden}
     Productos: ${producto_orden}
-    Total: $${this.calcularTotal()}`;
+    Total: $${this.calcularTotal()}`;    
+        }
     }
 }
 
@@ -76,17 +83,28 @@ class Orden {
 // VentasTest
 let producto1 = new Producto("Pantalon", 62000);
 let producto2 = new Producto("Campera", 43000);
-let producto3 = new Producto("Zapatos", 91000);
+let producto3 = new Producto("Zapatos", 57000);
 let producto4 = new Producto("Remera", 29000)
-//let producto5 = new Producto("Buzo", 33000);
-//let producto6 = new Producto("Gorra", 14000);
+let producto5 = new Producto("Buzo", 33000);
+let producto6 = new Producto("Gorra", 14000);
 
 let orden1 = new Orden();
 orden1.agregarProducto(producto1);
 orden1.agregarProducto(producto2);
 orden1.agregarProducto(producto3);
-orden1.agregarProducto(producto4);
-//orden1.agregarProducto(producto5);
-//orden1.agregarProducto(producto6);
 
 console.log(orden1.mostrarOrden());
+
+let orden2 = new Orden();
+orden2.agregarProducto(producto1);
+orden2.agregarProducto(producto2);
+orden2.agregarProducto(producto3);
+orden2.agregarProducto(producto4);
+orden2.agregarProducto(producto5);
+orden2.agregarProducto(producto6);
+
+console.log(orden2.mostrarOrden());
+
+let orden3 = new Orden();
+
+console.log(orden3.mostrarOrden());
