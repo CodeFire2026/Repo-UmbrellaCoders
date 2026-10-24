@@ -1,52 +1,52 @@
 :root {
     --fondo-color: #0B1E2D; /* Azul para fondo*/
-    --azul-oscuro: #1a5b8cfd;/*Azul oscuro (bordes)*/
-    --azul-oscuro2: #09273ffa; /*Azul oscuro (tarjetas)*/
+    --azul-oscuro: #1a5b8cfd;/*Azul oscuro*/
+    --azul-oscuro2: #09273ffa; /*Azul oscuro*/
     --azul-claro: #3A9BDC;/*Azul claro*/
-    --color-texto: #F4F7F9;/*Color de texto principal */
+    --color-texto: #F4F7F9;/*Color de texto principal*/
 }
 
-/*Imagen*/
-/*background-position:105%; Centrar la imagen*/
-/*background-size: 40rem; Tamaño del logo*/
 /**/
-/*Fondo*/
+/*Cuerpo*/
 body {
-
-    /*Color y letras de fondo*/
+    color: var(--color-texto); /*Color de texto general*/
     background-color: #021426; /*Color de fondo*/
-    color: var(--color-texto);/*Color de texto general*/
-    font-family: 'Montserrat', sans-serif;/*Tipo de letra general*/
+    font-family: 'Montserrat', sans-serif; /*Tipo de letra general*/
+    padding-top: 55px; /*Espacio superior para el encabezado fijo*/
 
-    /*Diseño para el fondo*/
-    background-image:
-    radial-gradient(circle at 82% 55%, rgba(0, 174, 255, 0.2), transparent 30%), /*Brillo en el logo con forma de circulo*/
-    linear-gradient(135deg, transparent 70%, rgba(0, 140, 255, 0.15) 70.2%, rgba(0, 140, 255, 0.15) 70.5%, transparent 70.5%), /*Línea diagonal */
-    linear-gradient(315deg, transparent 80%, rgba(0, 140, 255, 0.1) 80%, rgba(0, 140, 255, 0.1) 80.5%, transparent 80.5%), /*Otra línea diagonal en la esquina contraria*/
-    linear-gradient(135deg, #000000, #021426, #000000); /*Degradado de fondo*/
+    background-image: linear-gradient(135deg, #000000, #021426, #000000), /*Degradado de fondo*/
+    linear-gradient(135deg, transparent 70%, rgba(0, 140, 255, 0.15) 70.2%, rgba(0, 140, 255, 0.15) 70.5%, transparent 70.5%); /*Línea diagonal */
 
     background-repeat: no-repeat; /*Esto es para que no se repita el diseño del fondo*/
     min-height: 100vh; /*Para que ocupe toda la pantalla*/
 }
-/**/
 /* Encabezado */
 .encabezado {
-    display: flex;/*Aplico flex al encabezado*/
+    display: flex;/*Flex al encabezado*/
     justify-content: space-between;/*Distribucion de el contenido*/
-    align-items: center;/*Centrar items */
-    margin: 0 1rem;/*Margen*/
+    align-items: center;/*Centrar items*/
     border-bottom: 1px solid var(--azul-claro);/*Linea para liminar el encabezado*/
+    padding: 0 35px; /*Espacion interno para los bordes*/
+    box-sizing: border-box; /*Evita que el contenido sume ancho al 100% y genere scroll horizontal */
+
+    background-color:  #0f0e1a;/*Color de fondo del encabezado*/
+    position: fixed; /*Encabezado fijo en la parte superior*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /*Asegura que quede por encima de otros elementos*/
 }
 .encabezado p {
     font-family: monospace; /*Tipo de letra para el nombre del encabezado*/
-    font-size: 1.25rem; /*Tamaño de letra*/
+    font-size: 1.5rem; /*Tamaño de letra*/
 }
+/*Navegacion*/
 .diseño-p {
     color: var(--azul-claro); /*Diseño para el nombre del encabezado*/
 }
 .navigation {
     display: flex; /*Flex para la navegacion*/
-    gap: 5rem; /*Distancia entre las etiquetas*/
+    gap: 4rem; /*Distancia entre las etiquetas*/
     list-style: none;/*Quitar el estilo predeterminado de las etiquetas */
 }
 .contactar {
@@ -56,18 +56,25 @@ body {
     font-weight:600; /*Ancho de las letras para que no se pierdan en el fondo*/
     color: var(--fondo-color);
     background-color: #5aa1e4; /*Color de fondo para el boton*/
+    transition: scale 0.3s ease, background-color 0.3s ease, color 0.3s ease; /*Transición suave para el hover*/
 }
-
+.contactar:hover { /*Esto es una animacion al hacer hover (pasar el cursor)*/
+    background-color: #1b252c; /*Color de fondo al hacer hover*/
+    color: var(--azul-claro); /*Color de letra al hacer hover*/
+    scale: 1.05; /*Escala ligeramente al hacer hover*/
+    color: #5fb1d1;
+}
 a {
     text-decoration: none;
     color: var(--color-texto);
 }
-
+/*Seccion de inicio*/
 .inicio {
     display: flex;
     align-items: center; /*Centrar*/
     min-height: 80vh; /*Altura de la seccion en la pantalla*/
 }
+/*Titulo h1*/
 h1 {
     font-size: 5.25rem; /*Tamaño de la letra*/
     line-height: 4.75rem; /*Espacio entre renglones*/
@@ -75,11 +82,25 @@ h1 {
 .diseño-h1 {
     color: var(--azul-claro); /*Color de la letra*/
 }
+/*Imagen*/
 .logo {
-    width: 32rem; /*Anchura de la imagen*/
-    height: 25rem; /*Altura de la imagen*/
+    width: 32rem; /*Ancho de la imagen*/
+    height: 25rem; /*Alto de la imagen*/
 }
-
+/*Main*/
+.main-container {
+    display: flex;/*Aplicar flex*/
+    flex-direction: column;/*Dirección de los elementos*/
+    gap: 1rem;/*Espacio provisorio*/
+    margin-top: 6rem;/*Espacio superior*/
+    padding: 0 2rem;/*Espacio interno*/
+}
+/*Linea para encabezado de cada seccion del main*/
+.linea {
+    flex-grow: 1; /*Permite que la linea crezca ocupando el espacio disponible al lado del titulo*/
+    height: 2px; /*Ancho de la linea*/
+    background-color: var(--azul-claro); /*Color*/
+}
 /**/
 @media (max-width: 768px) {
     .encabezado {
