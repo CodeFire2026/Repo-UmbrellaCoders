@@ -1,0 +1,48 @@
+.encabezado-skills {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.encabezado-skills h2{
+    font-size: 2.5rem;
+    color: var(--color-texto);
+}
+.container-skills {
+    display: flex; /*Flex*/
+    gap: 4rem;
+    padding: 1rem 0; /*Espacio interno*/
+}
+/*Cajas para cada skill*/
+.container-skill {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /*Centra todos los elementos*/
+    align-items: center; /*Los acomoda verticalmente*/
+    gap: 1rem; /*Espacio entre las cajas de las skill y el nombre de las skills*/
+    color: #00000000; /*Aplica color negro totalmente trasparente para que no se vea el nombre de la skill (al hacer hover cambia el color y aparece)*/
+}
+.skill {
+    background-color: #4a87b881; /*Color de fondo para las cajas*/
+    background: radial-gradient(circle, rgba(35, 64, 87, 0.445) 0%, rgba(35, 128, 172, 0.664)100%);/*Efecto de fondo degradado*/
+    border-radius: 0.65rem; /*Hace que el borde sea ligeramente redondeado*/
+    padding: 1rem; /*Espacio interno*/    
+    width: 70px; /*Ancho de las cajas*/
+    height: 70px; /*Alto*/
+    /*Centrar los iconos dentro de las cajas*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: ease;/*Transición al hacer hover*/
+}
+.skill svg {
+    /*Tamaño de los iconos*/
+    width: 60px;
+    height: 60px;
+}
+.nombre-skill {
+    transition: color 0.4s ease-out; /*Transicion de color*/
+}
+.container-skill:hover  {
+    transform: scale(1.07);/*Aumenta el tamaño al hacer hover*/
+    color: var(--azul-claro);
+}

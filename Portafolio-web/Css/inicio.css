@@ -1,12 +1,17 @@
+.inicio {
+    display: flex;
+    align-items: center; /*Centrar*/
+    min-height: 80vh; /*Altura de la seccion en la pantalla*/
+    background-image: radial-gradient(circle at 72% 50%, rgba(0, 174, 255, 0.25) 0%, transparent 25%),
+    linear-gradient(315deg, transparent 80%, rgba(0, 140, 255, 0.1) 80%, rgba(0, 140, 255, 0.1) 80.5%, transparent 80.5%); /*Linea diagonal en la esquina*/
+    background-repeat: no-repeat;
+}
 .container-inicio {
     padding: 2.5rem; /*Espacio interno*/
     margin: 0 3rem;
     max-width: 40rem; /*Evita que se estire demasiado en pantallas grandes*/
     line-height: 2rem; /*Espacio entre renglones*/
     font-size: 1.25rem; /*Tamaño de las letras*/
-}
-.hola-mundo {
-    color: #5aa1e4;
 }
 .nombre-grupo {
     color: var(--azul-claro);
