@@ -574,3 +574,54 @@ git log --stat
 9. Distribuir el trabajo mediante ramas
 
 A partir de ahora el dueño del repositorio y el colaborador deberán repartir el trabajo, esto se hace con distintas ramas de trabajo: el dueño trabajará desde la rama header y el colaborador desde la rama footer, al final cuando se termine, se hara un merge para terminar el proyecto.
+
+## Clase 10
+
+### Flujo de trabajo profesional: hacer merge de ramas de desarrollo a main
+
+Para poder desarrollar software de manera óptima y ordenada, necesitamos tener un flujo de trabajo profesional, que nos permita trabajar en conjunto sin interrumpir el trabajo de otros desarrolladores.
+
+Una buena práctica de flujo de trabajo sería la siguiente:
+
+1. Crear ramas.
+2. Asignar una rama a cada programador.
+3. El programador baja el repositorio con `git pull origin main` (en la clase se nombró como `master`, que es lo mismo que `main`, como vimos en la Clase 3).
+4. El programador cambia de rama.
+5. El programador trabaja en esa rama y hace commits.
+6. El programador sube su trabajo con `git push origin nombre_rama`.
+7. El encargado de organizar el proyecto baja, revisa y unifica todos los cambios.
+
+```sh
+git pull origin main # Bajamos el repositorio
+git checkout nombre_rama # Cambiamos a nuestra rama de trabajo
+git add .
+git commit -m "Descripcion del cambio" # Trabajamos y hacemos commits en nuestra rama
+git push origin nombre_rama # Subimos nuestro trabajo a GitHub
+```
+
+Y el encargado de organizar el proyecto unifica los cambios en `main`:
+
+```sh
+git checkout main # Nos paramos en la rama principal
+git pull origin main # La actualizamos
+git merge nombre_rama # Unificamos los cambios de la rama del programador
+git push origin main # Subimos el resultado final a GitHub
+```
+
+## Clase 11
+
+### Flujo de trabajo profesional: archivos binarios
+
+Cargar imágenes en el repositorio representa un problema: las imágenes son pesadas, y si las subimos al repositorio, cada vez que hagamos cambios vamos a estar trayendo la imagen nuevamente. Para GitHub, estas imágenes son **archivos binarios**, y mientras más binarios carguemos, más pesado va a ser el repositorio, algo que no forma parte de las buenas prácticas.
+
+Otra cosa muy importante a tener en cuenta es que cada commit tiene un **tamaño máximo de carga predefinido de 100 MB**. Si lo superamos, no podremos subir los commits. Si acoplamos un archivo binario que pese más que eso en un commit, será un problema: no nos dejará seguir commiteando, porque siempre seguirá arrastrando el archivo binario.
+
+> **Buena práctica:** evitar subir archivos binarios pesados (imágenes, videos, etc.) al repositorio.
+
+## Clase 12
+
+### Flujo de trabajo profesional: ya hemos llegado al nivel más alto de GitHub
+
+Con esta clase llegamos al nivel más alto de GitHub dentro del curso. Ya terminando el semestre, este `README.md` debe estar completo, escrito en lenguaje **Markdown**, con todos los comandos y prácticas vistos en cada clase.
+
+El archivo se presenta en clase en vivo por Zoom.
