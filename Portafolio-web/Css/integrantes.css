@@ -51,16 +51,16 @@
     font-size: 1.2rem; /*Tamaño de la letra*/
     line-height: 1.5;/*Espacio entre cada linea*/
 }
-.enlaces-integrante {
+.integrante-social {
     display: flex;
     gap: 1.5rem; /*Distancia entre links*/
 }
-.enlaces-integrante svg {
+.integrante-social svg {
     /*Tamaño de los iconos*/
     width: 2rem;
     height: 2rem;
     transition: transform 0.3s ease;
 }
-.enlaces-integrante svg:hover {
+.integrante-social svg:hover {
     transform: scale(1.2);
 }

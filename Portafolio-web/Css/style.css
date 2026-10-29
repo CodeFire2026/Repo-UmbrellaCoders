@@ -95,7 +95,7 @@ h1 {
     display: flex;/*Aplicar flex*/
     flex-direction: column;/*Dirección de los elementos*/
     gap: 4rem;/*Espacio entre secciones*/
-    margin-top: 2rem;/*Espacio*/
+    margin-top: 2rem;/*Margen superior*/
     padding: 0 2rem;/*Espacio interno*/
 }
 /*Encabezado pra cada seccion del main*/
@@ -148,8 +148,56 @@ h1 {
         width: 17rem; /*Tamaño de la imagen*/
         height: 12rem;
     }
+    .encabezado-main h2 {
+        font-size: 1.8rem;
+        /*Tamalo del titulo de la secciones dentro del main*/
+    }
     /*Seccion de proyectos*/
-    .proyectos h2 {
-        font-size: 2.25rem;
+    .galeria-proyectos {
+        flex-wrap: wrap;
+        gap: 3rem;
+    }
+    .proyecto {
+        font-size: 01rem;
+    }
+    /*Seccion de integrantes*/
+    .main-container .container-nosotros {
+        grid-template-columns: repeat(auto-fill, 31rem);
+    }
+    .integrante .img-integrante {
+        width: 5rem;
+        height: 5rem;
+    }
+    .integrante .info-integrante .rol {
+        font-size: 13px;
+    }
+    .integrante .info-integrante h3 {
+        font-size: 1.5rem;
+    }
+    .integrante .descripcion {
+        font-size: 1rem;
+    }
+    .integrante .integrante-social {
+        gap: 1rem;
+    }
+    .integrante .integrante-social svg {
+        width: 1.75rem;
+        height: 1.75rem;
+    }
+    /*Seccion de skills*/
+    .container-skills {
+        flex-wrap: wrap;
+    }
+    .container-skills .skill {
+        width: 50px;
+        height: 50px;
+    }
+    .container-skills .skill svg {
+        width: 40px;
+        height: 40px;
+    }
+    /*Seccion contacto*/
+    .main-container .container-contacto {
+        max-width: 400px;
     }
 }

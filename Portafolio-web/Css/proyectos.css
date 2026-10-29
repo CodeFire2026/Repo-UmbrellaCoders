@@ -17,9 +17,6 @@
 .proyecto a{
     color: var(--azul-claro); /*Color del texto del enlace*/
 }
-.encabezado-proyectos h2{
-    font-size: 2.5rem; /*Tamaño del titulo*/
-}
 .encabezado-proyectos {
     display: flex; /*Aplicar flex a la sección de encabezado de proyectos*/
     align-items: center; /*Centra la linea y el h2*/
