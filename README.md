@@ -574,3 +574,96 @@ git log --stat
 9. Distribuir el trabajo mediante ramas
 
 A partir de ahora el dueño del repositorio y el colaborador deberán repartir el trabajo, esto se hace con distintas ramas de trabajo: el dueño trabajará desde la rama header y el colaborador desde la rama footer, al final cuando se termine, se hara un merge para terminar el proyecto.
+
+## Clase 10
+
+### Flujo de trabajo profesional: Ramas en Git y GitHub
+
+> **Haciendo merge de ramas de desarrollo a main**
+
+Para poder desarrollar software de manera óptima y ordenada, necesitamos tener un flujo de trabajo profesional, que nos permita trabajar en conjunto sin interrumpir el trabajo de otros desarrolladores.
+
+Una buena práctica de flujo de trabajo sería la siguiente:
+
+1. Crear ramas
+
+```sh
+      git branch nombre-rama
+```
+
+2. Asignar una rama a cada programador
+
+    Cada programador trabja en su propia rama sin modificar directamente la rama main.
+
+3. Traer los cambios del repositorio remoto
+
+    Antes de comenzar a trabajar es importante actualizar nuestro repo local.
+
+```sh
+      git pull origin main
+```
+
+1. Cambiar a la rama de trabajo
+
+```sh
+      git switch nombre-rama
+```
+
+también puedes usar
+
+```sh
+      git checkout nombre-rama
+```
+
+5. Trabajar en la rama y hacer commits
+
+    Cada programador trabaja en su respectiva rama y luego guarda los cambios.
+
+```sh
+      git add
+      git comit -m "descripcion del cambio"
+```
+
+1. Subir los cambios a GitHub
+
+    Una vez guardados los cambios cada programador sube los cambios desde su rama.
+
+```sh
+      git push origin nombre-rama
+```
+
+7. Revisar y unificar los cambios
+
+    El encargado del proyecto revisa los cambios y los integra a main mediante un pull request.
+
+## Clase 11
+
+### Flujo de trabajo profesional: Archivos binarios
+
+> ¿Qué son los archivos binarios?
+
+Los archivos binarios son aquellos archivos que almacenan informacion en un formato que no esta compuesto directamente con texto legible, como por ejemplo imagenes (.png, .jpg) o archivos de audios (.mp3).
+
+> ¿Cuál es el problema con Git?
+
+A diferencia de los archivos de texto, los archivos binarios no se pueden comparar y fusionar fácilmente línea por línea.
+
+Cuando se modifica un archivo de este tipo, Git generalmente necesita almacenar una nueva versión del archivo en lugar de registrar solamente pequeñas diferencias, lo cual puede provocar:
+
+- Que el repositorio sea mas pesado.
+- Mayor tiempo de descarga y sincronización.
+- Mayor consumo de almacenamiento.
+- Dificultades al trabajar en equipo.
+
+> Limite de tamaño de GitHub
+
+Algo importante a tener en cuenta es que GitHub establece un límite de tamaño para la carga de un commit, de 100 mb. Si se intenta subir algo que supere el límite predefinido, GitHub rechazará el envío.
+
+> Buenas practicas
+
+Para mantener el repositorio liviano y organizado se recomienda:
+
+- Evitar subir imágenes, videos u archivos pesados innecesarios
+- Comprimir u optimizar las imagenes antes de usarlas
+- Utilizar servicios externos para almacenar estos archivos cuando corresponda
+- Mantener actualizado el .gitignore para excluir archivos no deseados
