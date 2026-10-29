@@ -8,8 +8,9 @@ UTN - Facultad Regional San Rafael
 
 Integrantes:
 
-> Martínez Miguel
-> Salas Juan Pablo
+- Martínez Miguel
+
+- Salas Juan Pablo
 
 ---
 
