@@ -1,0 +1,27 @@
+.footer {
+    margin-top: 4rem; /*Margen superior*/
+    padding: 0.75rem 0;
+    background-color: #0b1e2da8;
+}
+.container-footer {
+    display: flex;
+    justify-content: center; /*Coloca el contenido en el centro del footer*/
+    align-items: center; /*Alinea los elementos*/
+    gap: 1rem;
+}
+.footer-social {
+    display: flex;
+}
+.footer-social a {
+    border-radius: 50%; /*Icono circular*/
+    transition: transform 0.6s ease; /*¨}Para animacion en el hover*/
+}
+
+.footer-social a:hover {
+    transform: rotate(360deg); /*El icono gira una vuelta completa*/
+}
+
+.footer-social svg {
+    width: 36px; /*Tamaño del icono*/
+    height: 36px;
+}

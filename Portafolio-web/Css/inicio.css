@@ -1,11 +1,9 @@
 .inicio {
-    display: flex;
-    align-items: center; /*Centrar*/
     min-height: 80vh; /*Altura de la seccion en la pantalla*/
-    background-image: radial-gradient(circle at 72% 50%, rgba(0, 174, 255, 0.25) 0%, transparent 25%),
-    linear-gradient(315deg, transparent 80%, rgba(0, 140, 255, 0.1) 80%, rgba(0, 140, 255, 0.1) 80.5%, transparent 80.5%); /*Linea diagonal en la esquina*/
-    background-repeat: no-repeat;
+    background-image: radial-gradient(circle at 79% 50%, rgba(0, 174, 255, 0.25) 0%, transparent 25%),
+    linear-gradient(315deg, transparent 80%, #008cff31 80%, rgba(0, 140, 255, 0.199) 80.5%, transparent 80.5%);/*Linea diagonal en la esquina*/
 }
+/*background-image: linear-gradient(135deg, transparent 70%, rgba(0, 140, 255, 0.1) 70%, rgba(0, 140, 255, 0.1) 70%, transparent 80.5%);*/
 .container-inicio {
     padding: 2.5rem; /*Espacio interno*/
     margin: 0 3rem;

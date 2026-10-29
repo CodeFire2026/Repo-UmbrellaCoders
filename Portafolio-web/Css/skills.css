@@ -1,12 +1,3 @@
-.encabezado-skills {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-.encabezado-skills h2{
-    font-size: 2.5rem;
-    color: var(--color-texto);
-}
 .container-skills {
     display: flex; /*Flex*/
     gap: 4rem;

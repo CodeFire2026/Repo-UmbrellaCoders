@@ -13,14 +13,6 @@
     gap: 2rem; /*Espacio entre tarjetas */
     padding: 2rem;
 }
-.encabezado-integrantes {
-    display: flex;/*Aplicar flex a la sección de encabezado de integrantes*/
-    align-items: center;/*Centra la linea y el h2*/
-    gap: 15px;/*Espacio entre el h2 y la linea*/
-}
-.encabezado-integrantes h2 {
-    font-size: 2.5rem; /*Tamalo del titulo de la seccion*/
-}
 .integrante {
     display: flex;
     background-color: #0e0d22;/*Color de fondo*/
@@ -28,6 +20,8 @@
     padding: 1.5rem; /*Espacio interno para el contenido*/
     border-radius: 0.65rem; /*Borde redondeado*/
     gap: 1rem;
+    /*Esto hace una linea con degradado en la esquina inferrior derecha de las tarjetas*/
+    background-image: linear-gradient(135deg, transparent 80%, rgba(0, 140, 255, 0.1) 80%, rgba(0, 140, 255, 0.1) 80%, transparent 90.5%); 
 }
 .info-integrante {
     display: flex;
