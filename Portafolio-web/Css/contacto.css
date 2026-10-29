@@ -1,0 +1,52 @@
+
+.container-contacto {
+    max-width: 500px;
+    margin: 0 auto;
+}
+/*formulario */
+.container-contacto form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+/* Estilo de los textos de los label */
+.container-contacto label {
+    font-size: 15px;
+    margin-bottom: -8px; /*Se juntan mas*/
+}
+/* Estilo para los inputs y el textarea */
+.container-contacto input,
+.container-contacto textarea {
+    width: 100%;
+    padding: 12px 14px;
+    background-color: var(--azul-oscuro2);
+    border: 2px solid var(--azul-oscuro);
+    border-radius: 8px;
+    font-size: 14px;
+    box-sizing: border-box;
+    color: white;
+}
+/* Desactivar el cambio de tamaño libre del textarea */
+.container-contacto textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+/* Botón de envío */
+.container-contacto button {
+    padding: 12px;
+    background-color: var(--azul-oscuro2);
+    color: var(--azul-claro);
+    border: 1px solid var(--azul-oscuro);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    margin-top: 10px;
+    margin-bottom: 1.5rem;
+}
+.container-contacto button:hover {
+    border: 1px solid #1b252c; /*El borde se vuelve del mismo color al fondo al hacer hover*/
+    color: #5fb1d1; /*Ligeramente mas claro*/
+    background-color: #1b252c; /*Fondo*/
+}
