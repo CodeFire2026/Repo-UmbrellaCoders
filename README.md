@@ -1,10 +1,35 @@
 # Repo-UmbrellaCoders
 
-Repositorio Umbrella Coders - Cohorte 2026
+Grupo Umbrella Coders - Cohorte 2026
+
+Tecnicatura Universitaria en Programación
+
+UTN - Facultad Regional San Rafael
+
+Integrantes:
+
+> Martínez Miguel
+> Salas Juan Pablo
+
+---
 
 ## GitHub
 
-## Clase 1
+## Indice
+
+- [Clase 1 - Uso de GitHub](#clase-01)
+- [Clase 2 - Clave SSH y comandos de Git](#clase-02)
+- [Clase 03 - Cambios de Github: de master a main](#clase-03)
+- [Clase 04 – Tu primer Push](#clase-04)
+- [Clase 05 – Git Tag y versiones](#clase-05)
+- [Clase 06 – Error con Tags](#clase-06)
+- [Clase 08 – Repaso y manejo de ramas](#clase-08)
+- [Clase 09 – Configuración de colaboradores](#clase-09)
+- [Clase 10 – Flujo de trabajo profesional con ramas](#clase-10)
+- [Clase 11 – Archivos binarios](#clase-11)
+- [Clase 12 – Fin](#clase-12)
+
+## Clase 01
 
 USO DE GITHUB
 
@@ -59,7 +84,9 @@ Si queremos conectar el repositorio de GitHub con nuestro repositorio local, aco
     git push origin main
 ```
 
-## Clase 2
+---
+
+## Clase 02
 
 ### Clave SSH
 
@@ -103,7 +130,9 @@ Para solucionar esto:
 3. Cambiar la rama principal de master a main
 4. Una vez hecho el cambio ya podemos borrar la rama master
 
-## Clase 3
+---
+
+## Clase 03
 
 ### Cambios en GitHub: de master a main
 
@@ -189,7 +218,9 @@ git checkout trabajo
 git merge origin/trabajo
 ```
 
-## Clase 4
+---
+
+## Clase 04
 
 ### Tu primer Push
 
@@ -241,7 +272,9 @@ Estos son los pasos para invitar a un colaborador en un repositorio en Github:
 
 Del otro lado el usuario invitado solo debe aceptar y listo, ya puede participar del proyecto haciendo commit.
 
-## Clase 5
+---
+
+## Clase 05
 
 ### Git tag y versiones en GitHub
 
@@ -339,7 +372,9 @@ Esto eliminará la etiqueta identificada por "nombreTag" en el repositorio local
 
 En resumen, las etiquetas en Git son esenciales para asignar versiones y capturar instantáneas importantes en el historial de un proyecto. Aprender a crear, listar, compartir y eliminar etiquetas mejorará tu flujo de trabajo con Git.
 
-## Clase 6
+---
+
+## Clase 06
 
 ### Error con tags
 
@@ -397,7 +432,9 @@ git push origin v1.0
 
 Asi el tag v1.0 queda apuntando al commit correcto
 
-## Clase 8
+---
+
+## Clase 08
 
 ### Repaso: ¿Qué es Git?
 
@@ -441,7 +478,9 @@ Si no funciona el comando ```gitk``` es posible no lo tengamos instalado por def
   sudo apt-get install gitk
 ```
 
-## Clase 9
+---
+
+## Clase 09
 
 ### Configurar múltiples colaboradores en un repositorio de GitHub
 
@@ -575,6 +614,8 @@ git log --stat
 
 A partir de ahora el dueño del repositorio y el colaborador deberán repartir el trabajo, esto se hace con distintas ramas de trabajo: el dueño trabajará desde la rama header y el colaborador desde la rama footer, al final cuando se termine, se hara un merge para terminar el proyecto.
 
+---
+
 ## Clase 10
 
 ### Flujo de trabajo profesional: Ramas en Git y GitHub
@@ -636,6 +677,8 @@ también puedes usar
 
     El encargado del proyecto revisa los cambios y los integra a main mediante un pull request.
 
+---
+
 ## Clase 11
 
 ### Flujo de trabajo profesional: Archivos binarios
@@ -667,3 +710,11 @@ Para mantener el repositorio liviano y organizado se recomienda:
 - Comprimir u optimizar las imagenes antes de usarlas
 - Utilizar servicios externos para almacenar estos archivos cuando corresponda
 - Mantener actualizado el .gitignore para excluir archivos no deseados
+
+---
+
+## Clase 12
+
+### Flujo de trabajo profesional
+
+Hemos llegado al nivel más alto de GitHub.
