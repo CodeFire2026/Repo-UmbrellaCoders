@@ -31,7 +31,7 @@
     height: 60px;
 }
 .nombre-skill {
-    transition: color 0.4s ease-out; /*Transicion de color*/
+    transition: 0.4s ease-out; /*Transicion de color*/
 }
 .container-skill:hover  {
     transform: scale(1.07);/*Aumenta el tamaño al hacer hover*/

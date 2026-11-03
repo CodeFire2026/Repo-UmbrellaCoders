@@ -148,8 +148,161 @@ h1 {
         width: 17rem; /*Tamaño de la imagen*/
         height: 12rem;
     }
-    /*Seccion de proyectos*/
-    .proyectos h2 {
-        font-size: 2.25rem;
+    .encabezado-main h2 {
+        font-size: 2.2rem;
     }
+    /*Seccion de proyectos*/
+    .main-container .proyectos .galeria-proyectos  {
+        flex-direction: column; /*Hace que los proyectos se acomoden en columna*/
+        max-width: max-content; /*Evita que se desborde el contenido*/
+        gap: 2rem; /*Espacio entre los proyectos*/
+    }
+
+    /*Seccion de integrantes*/
+    .integrante .img-integrante {
+        width: 5.25rem; /*Tamaño de la imagen*/
+        height: 5.25rem;
+    }
+    .integrante .info-integrante h3 {
+        font-size: 1.35rem; /*Tamaño del nombre*/
+    }
+    .integrante .info-integrante p {
+        font-size: 1rem;
+    }
+    .integrante .info-integrante .rol{
+        font-size: 0.75rem; /*Tamaño del rol*/
+    }
+
+    /*Seccion de skills*/
+    .skills .container-skills {
+        flex-wrap: wrap; /*Hace que las skills se acomoden y bajen si no entran*/
+        gap: 2rem; /*Espacio entre las skills*/
+    }
+    .container-skills .container-skill .skill {
+        width: 55px; /*Ancho de las cajas*/
+        height: 55px; /*Alto*/
+    }
+    .container-skills .container-skill .skill svg {
+        width: 45px; /*Tamaño de los iconos*/
+        height: 45px;
+    }
+}
+/*Responsivo para celulares / dispositivos con maximo de 480 pixeles*/
+@media (max-width: 480px) {
+        body {
+            padding-top: 0;
+        }
+        .encabezado {
+            position: static;
+            padding: 0.5rem 1rem;
+            gap: 0.5rem;
+        }
+        .encabezado p {
+            margin: 0;
+            font-size: 1.25rem;
+        }
+        .navigation {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem 1.25rem;
+            font-size: 0.95rem;
+        }
+        .contactar {
+            padding: 7px 10px;
+        }
+        .container-inicio {
+            margin: 0;
+            padding: 1.5rem 1rem 0;
+            font-size: 1.05rem;
+            line-height: 1.7rem;
+        }
+        h1 {
+            font-size: 2.3rem;
+            line-height: 2.6rem;
+            overflow-wrap: break-word;
+        }
+        .logo {
+            width: 14rem;
+            height: auto;
+            max-width: 100%;
+        }
+        .main-container {
+            padding: 0 1rem;
+            gap: 3rem;
+        }
+        .encabezado-main h2,
+        .encabezado-proyectos h2 {
+            font-size: 1.8rem;
+        }
+        .encabezado-main,
+        .encabezado-proyectos {
+            gap: 10px;
+        }
+        .main-container .proyectos .galeria-proyectos {
+            max-width: 100%;
+            padding: 1rem 0;
+            gap: 1.5rem;
+        }
+        .proyecto {
+            padding: 1rem 1.25rem;
+        }
+        .container-nosotros {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            padding: 1rem 0;
+        }
+        .integrante {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 1.5rem 1.25rem;
+            gap: 0.5rem;
+        }
+        .integrante .img-integrante {
+            width: 6rem;
+            height: 6rem;
+            margin: 0;
+        }
+        .info-integrante {
+            align-items: center;
+            margin: 0;
+        }
+        .linea-i {
+            margin: 0.75rem auto;
+        }
+        .descripcion {
+            font-size: 1rem;
+        }
+        .enlaces-integrante {
+            justify-content: center;
+            margin-top: 0.5rem;
+        }
+        .skills .container-skills {
+            justify-content: center;
+            gap: 1rem 1.25rem;
+        }
+        .container-skills .container-skill .skill {
+            width: 48px;
+            height: 48px;
+            padding: 0.5rem;
+        }
+        .container-skills .container-skill .skill svg {
+            width: 38px;
+            height: 38px;
+        }
+        .footer {
+            margin-top: 2.5rem;
+        }
+        .container-footer {
+            flex-direction: column;
+            gap: 0.5rem;
+            text-align: center;
+        }
+        .container-contacto input,
+        .container-contacto textarea {
+            font-size: 16px;
+        }
+        .container-contacto label {
+            font-size: 14px;
+        }
 }
