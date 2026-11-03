@@ -5,7 +5,9 @@
     --azul-claro: #3A9BDC;/*Azul claro*/
     --color-texto: #F4F7F9;/*Color de texto principal*/
 }
-
+html {
+    scroll-behavior: smooth;/*Esto hace un desplazamiento suave entre secciones*/
+}
 /**/
 /*Cuerpo*/
 body {
@@ -17,15 +19,14 @@ body {
     background-image: linear-gradient(135deg, #000000, #021426, #000000), /*Degradado de fondo*/
     linear-gradient(135deg, transparent 70%, rgba(0, 140, 255, 0.15) 70.2%, rgba(0, 140, 255, 0.15) 70.5%, transparent 70.5%); /*Línea diagonal */
 
-    background-repeat: no-repeat; /*Esto es para que no se repita el diseño del fondo*/
-    min-height: 100vh; /*Para que ocupe toda la pantalla*/
+    margin: 0; /*Quita el margen*/
 }
 /* Encabezado */
 .encabezado {
     display: flex;/*Flex al encabezado*/
     justify-content: space-between;/*Distribucion de el contenido*/
     align-items: center;/*Centrar items*/
-    border-bottom: 1px solid var(--azul-claro);/*Linea para liminar el encabezado*/
+    border-bottom: 1px solid var(--azul-claro);/*Linea para limitar el encabezado*/
     padding: 0 35px; /*Espacion interno para los bordes*/
     box-sizing: border-box; /*Evita que el contenido sume ancho al 100% y genere scroll horizontal */
 
@@ -48,6 +49,7 @@ body {
     display: flex; /*Flex para la navegacion*/
     gap: 4rem; /*Distancia entre las etiquetas*/
     list-style: none;/*Quitar el estilo predeterminado de las etiquetas */
+    
 }
 .contactar {
     list-style: none;
@@ -58,7 +60,7 @@ body {
     background-color: #5aa1e4; /*Color de fondo para el boton*/
     transition: scale 0.3s ease, background-color 0.3s ease, color 0.3s ease; /*Transición suave para el hover*/
 }
-.contactar:hover { /*Esto es una animacion al hacer hover (pasar el cursor)*/
+.contactar:hover {
     background-color: #1b252c; /*Color de fondo al hacer hover*/
     color: var(--azul-claro); /*Color de letra al hacer hover*/
     scale: 1.05; /*Escala ligeramente al hacer hover*/
@@ -67,6 +69,7 @@ body {
 a {
     text-decoration: none;
     color: var(--color-texto);
+    transition: color 0.3 ease;
 }
 /*Seccion de inicio*/
 .inicio {
@@ -91,9 +94,15 @@ h1 {
 .main-container {
     display: flex;/*Aplicar flex*/
     flex-direction: column;/*Dirección de los elementos*/
-    gap: 1rem;/*Espacio provisorio*/
-    margin-top: 6rem;/*Espacio superior*/
+    gap: 4rem;/*Espacio entre secciones*/
+    margin-top: 2rem;/*Espacio*/
     padding: 0 2rem;/*Espacio interno*/
+}
+/*Encabezado pra cada seccion del main*/
+.encabezado-main {
+    display: flex;/*Aplicar flex a la sección de encabezado de integrantes*/
+    align-items: center;/*Centra la linea y el h2*/
+    gap: 15px;/*Espacio entre el h2 y la linea*/
 }
 /*Linea para encabezado de cada seccion del main*/
 .linea {
@@ -101,25 +110,46 @@ h1 {
     height: 2px; /*Ancho de la linea*/
     background-color: var(--azul-claro); /*Color*/
 }
-/**/
-@media (max-width: 768px) {
+.encabezado-main h2 {
+    font-size: 2.5rem;/*Tamalo del titulo de la secciones dentro del main*/
+}
+/*Responsivo para tablets / dispositivos con maximo de 767pixeles*/
+@media (max-width: 767px) {
+    /*Encabezado*/
     .encabezado {
-        flex-wrap: wrap; /*Acomoda los elementos en una linea, saltea linea si es necesario*/
-        justify-content: center; /*Centra el contenido*/
-        gap: 1rem; /*Espacio entre los items*/
-        padding: 1rem 0; /*Espacio interno*/
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    .encabezado p {
+        margin: 8px; /*Agrega un poco de espacio arriba y quita el de abajo*/
     }
     .navigation {
         gap: 1.5rem; /*Espacio entre etiquetas*/
         padding: 0; /*Espacio interno para acomodar*/
-        margin: 0;
+        margin: 0;            
     }
-    body {
-        background-size: 40rem; /*Tamaño de la imagen de fondo*/
-        background-position: center; /*Centra la imagen de fondo*/
+    /*Inicio*/
+    header .inicio {
+        flex-direction: column;
+        margin-top: 1rem;
+
+        background-image: radial-gradient(circle at 47% 80%, rgba(0, 174, 255, 0.25) 0%, transparent 25%), /*Mueve el circulo hacia la imagen*/
+            linear-gradient(315deg, transparent 80%, #008cff31 80%, rgba(0, 140, 255, 0.199) 80.5%, transparent 80.5%);
     }
-    .inicio .container-inicio {
-        padding: 1rem; /*Espacio interno para la tarjeta*/
-        font-size: 1rem; /*Tamaño del contenido*/
+    .inicio p {
+        font-size: 1.2rem;
+    }
+    h1 {
+        font-size: 3rem;
+        line-height: 3rem;
+    }
+    .logo {
+        margin-top: -50px; /*Achica el espacio entre la imagen y el texto*/
+        width: 17rem; /*Tamaño de la imagen*/
+        height: 12rem;
+    }
+    /*Seccion de proyectos*/
+    .proyectos h2 {
+        font-size: 2.25rem;
     }
 }

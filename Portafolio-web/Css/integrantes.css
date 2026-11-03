@@ -1,26 +1,66 @@
+.img-integrante {
+    border: 2px solid var(--azul-claro); /*Borde*/
+    border-radius: 50%; /*La hace circular*/
+    /*Tamaño de la imgen*/
+    width: 6.52rem;
+    height: 6.25rem;
+    margin: 1rem; /*Margen*/
+}
+/**/
 .container-nosotros {
-    display: flex;
-    flex-direction: row;/*Lado a lado */
-    justify-content: space-between;
-    gap: 4rem; /* Espacio entre los integrantes y los stacks */
-}
-.encabezado-integrantes h2{
-    font-size: 2.5rem; /*Tamaño del titulo*/
-}
-.encabezado-integrantes {
-    display: flex; /*Aplicar flex a la sección de encabezado de integrantes*/
-    align-items: center; /*Centra la linea y el h2*/
-    gap: 15px; /*Espacio entre el h2 y la linea*/
-}
-.integrantes {
-    display: flex; /*Aplicar flex a la sección de integrantes*/
-    flex-direction: column; /*Dirección de los elementos*/
-    gap: 3rem; /*Espacio entre los integrantes*/
-    padding: 2rem; /*Espacio interno para la sección de integrantes*/
+    display: grid; /*Coloca las tarjetas de lado*/
+    grid-template-columns: repeat(auto-fill, 35rem); /*Ancho fijo para las tarjetas de integrante*/
+    gap: 2rem; /*Espacio entre tarjetas */
+    padding: 2rem;
 }
 .integrante {
-    background-color: #0e0d22; /*Color de fondo para cada proyecto*/
-    border: 1px solid var(--azul-claro); /*Borde para cada proyecto*/
-    padding: 1rem 2rem; /*Espacio interno para el contenido del proyecto*/
+    display: flex;
+    background-color: #0e0d22;/*Color de fondo*/
+    border: 1px solid var(--azul-claro); /*Borde*/
+    padding: 1.5rem; /*Espacio interno para el contenido*/
     border-radius: 0.65rem; /*Borde redondeado*/
+    gap: 1rem;
+    /*Esto hace una linea con degradado en la esquina inferrior derecha de las tarjetas*/
+    background-image: linear-gradient(135deg, transparent 80%, rgba(0, 140, 255, 0.1) 80%, rgba(0, 140, 255, 0.1) 80%, transparent 90.5%); 
+}
+.info-integrante {
+    display: flex;
+    flex-direction: column; /*Contenido en columna*/
+    justify-content: flex-start; /*Comienza desde un costado*/
+    margin-right: auto;
+    margin-top: 1rem;
+}
+.info-integrante h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+.info-integrante .rol {
+    margin: 0.25rem 0;
+    font-size: 0.85rem; /*Tamaño*/
+    color: var(--azul-claro); /*Color*/
+    letter-spacing: 2.5px; /*Espacio entre cada letra*/
+}
+.linea-i {
+    width: 4rem; /*Largo de la liena*/
+    height: 3px; /*Ancho de la liena*/
+    background-color: var(--azul-claro); /*Color*/
+    margin: 0.75rem 0; /*Margen*/
+}
+.descripcion {
+    margin-top: 0.75rem; /*Margen superior*/
+    font-size: 1.2rem; /*Tamaño de la letra*/
+    line-height: 1.5;/*Espacio entre cada linea*/
+}
+.enlaces-integrante {
+    display: flex;
+    gap: 1.5rem; /*Distancia entre links*/
+}
+.enlaces-integrante svg {
+    /*Tamaño de los iconos*/
+    width: 2rem;
+    height: 2rem;
+    transition: transform 0.3s ease;
+}
+.enlaces-integrante svg:hover {
+    transform: scale(1.2);
 }
